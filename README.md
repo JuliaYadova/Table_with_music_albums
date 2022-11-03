@@ -51,10 +51,12 @@ album2[2021] | album2 | artist_name2 | track1 track2 track3
 ---
 Инструкция по запуску:
 1. Скопировать репозиторий;
-2. В папке проекта создать виртуальное окружение и запустить его *Здесь и далее команды под ОС Windows*:
+2. В папке проекта создать виртуальное окружение и запустить его (*Здесь и далее команды под ОС Windows*):
 ```
 python -m venv venv
 source venv/Scripts/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 4. Из папки с файлом manage.py запустить сервер:
 ```
@@ -62,3 +64,19 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
+5. Загрузить данные для теста:
+```
+python manage.py from_csv
+
+```
+6. Проект готов к тестированию:
+```
+/index # Главная страница проекта
+/?sorting=name
+/?sorting=artist@name # Обрабатываемые запросы на сортировку
+
+```
+
+---
+### Автор
+Юлия Я.
