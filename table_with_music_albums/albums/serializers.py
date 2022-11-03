@@ -1,5 +1,6 @@
-from .models import Album
 from rest_framework import serializers
+
+from .models import Album
 
 
 class AlbumSerializer(serializers.ModelSerializer):
@@ -19,5 +20,5 @@ class AlbumSerializer(serializers.ModelSerializer):
                   'artist@name',
                   'tracks',)
         extra_kwargs = {
-            'artist@name': {'source': 'name', 'read_only': True},
+            'artist@name': {'source': 'get_artist', 'read_only': True},
         }

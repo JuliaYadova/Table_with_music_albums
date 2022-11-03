@@ -35,6 +35,10 @@ class Album(models.Model):
     def __str__(self):
         return self.name+f'[{self.year}]'
 
+    @property
+    def get_artist(self):
+        return self.artist.name
+
 
 class Track(models.Model):
     name = models.CharField(max_length=200, verbose_name='Композиция')
