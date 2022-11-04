@@ -62,21 +62,18 @@ python -m pip install -r requirements.txt
 ```
 python manage.py makemigrations
 python manage.py migrate
+python manage.py from_csv
 python manage.py runserver
 ```
-5. Загрузить данные для теста:
-```
-python manage.py from_csv
 
-```
-6. Проект готов к тестированию:
+5. Проект готов к тестированию:
 ```
 /index # Главная страница проекта
-/?sorting=name
-/?sorting=artist@name # Обрабатываемые запросы на сортировку
+/index/?sorting=name  # Обрабатываемые запросы на сортировку
+/index/?sorting=artist@name # Обрабатываемые запросы на сортировку
 
 ```
-
+В проекте используется .env файл, так как проект ограниченного функционала, внесены default значения.  По этой же причине используется стандартная библиотека SQLite.
 ---
 ### Автор
 Юлия Я.
